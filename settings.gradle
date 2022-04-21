@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Book Hub App"
 include ':app'
+include ':data-local'
+include ':data-remote'
+include ':domain'
