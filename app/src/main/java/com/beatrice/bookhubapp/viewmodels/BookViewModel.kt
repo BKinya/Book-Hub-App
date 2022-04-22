@@ -14,7 +14,7 @@ class BookViewModel (
   fun getBooks(searchTerm: String){
       viewModelScope.launch (Dispatchers.IO){
         val books = getBooksUseCase.getBooks(searchTerm)
-        logcat { "Books are $books" }
+        logcat("BookViewModel") { "Books are ${books.size} and are $books" }
       }
   }
 }

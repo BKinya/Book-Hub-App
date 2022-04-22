@@ -24,6 +24,7 @@ fun createOkClient(): OkHttpClient {
 }
 
 fun getLoggingInterceptor(): Interceptor {
+  // TODO: Maybe take this to application or core module
   val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
     level = HttpLoggingInterceptor.Level.BODY
   }
