@@ -1,4 +1,4 @@
 package com.beatrice.domain
 
-class MyClass {
+abstract class Book {
 }

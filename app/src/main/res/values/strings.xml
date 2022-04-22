@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Book Hub App</string>
+  <string name="enter_author_or_book_title">Enter Author or Book Title</string>
 </resources>
