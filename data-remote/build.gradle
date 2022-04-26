@@ -23,6 +23,8 @@ dependencies {
   implementation("com.squareup.okhttp3:okhttp")
   implementation("com.squareup.okhttp3:logging-interceptor")
 
-
-
+  // Test
+  testImplementation 'junit:junit:4.13.2'
+  testImplementation "io.mockk:mockk:1.12.3"
+  testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
 }
