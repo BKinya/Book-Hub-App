@@ -1,2 +1,2 @@
-# Book-Hub-App
-A simple android app to search books
+# BookHub App
+An Android app to search for books
