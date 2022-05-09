@@ -7,6 +7,7 @@ import com.beatrice.domain.models.Book
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.Is.`is`
@@ -26,7 +27,7 @@ class BookRepositoryTest {
     val searchTerm = "Paulo Coelho"
     var result: List<Book>
     runBlocking {
-     result =  repository.getBooks(searchTerm)
+     result =  repository.getBooks(searchTerm).first()
     }
     // Assert
     coVerify { apiService.getBooks(searchTerm) }
