@@ -2,19 +2,38 @@ package com.beatrice.bookhubapp.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.beatrice.domain.models.Book
 import com.beatrice.domain.usecases.GetBooksUseCase
-import kotlinx.coroutines.Dispatchers
+import com.beatrice.domain.usecases.GetBooksUseCaseImpl
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 import logcat.logcat
 
-class BookViewModel (
-  private val getBooksUseCase: GetBooksUseCase
-    ): ViewModel() {
+class BookViewModel(
+  private val getBooksUseCaseImpl: GetBooksUseCase,
+  private val dispatcher: CoroutineDispatcher
+) : ViewModel() {
 
-  fun getBooks(searchTerm: String){
-      viewModelScope.launch (Dispatchers.IO){
-        val books = getBooksUseCase.getBooks(searchTerm)
-        logcat("BookViewModel") { "Books are ${books.size} and are $books" }
-      }
+  private val bookItems = MutableStateFlow<List<Book>>(emptyList())
+  val books: StateFlow<List<Book>> = bookItems
+
+  private val error = MutableStateFlow<String>("")
+  val errorMsg: StateFlow<String> = error
+
+  fun getBooks(searchTerm: String) {
+    viewModelScope.launch(dispatcher) {
+      getBooksUseCaseImpl.getBooks(searchTerm)
+        .catch { e ->
+          logcat("BookViewModel") { "Exception ${e.message}" }
+          error.value = "Something went wrong! Try again later"
+        }
+        .collect { books ->
+          bookItems.value = books
+        }
+    }
+
   }
 }
