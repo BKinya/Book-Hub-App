@@ -31,6 +31,7 @@ class BookViewModel(
           error.value = "Something went wrong! Try again later"
         }
         .collect { books ->
+          logcat("BookViewModel") { "Books => ${books.size}" }
           bookItems.value = books
         }
     }

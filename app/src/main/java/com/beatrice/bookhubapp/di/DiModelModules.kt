@@ -6,6 +6,7 @@ import com.beatrice.dataremote.api.createOkClient
 import com.beatrice.dataremote.api.createRetrofit
 import com.beatrice.dataremote.repository.BookRepositoryImpl
 import com.beatrice.domain.repository.BookRepository
+import com.beatrice.domain.usecases.GetBooksUseCase
 import com.beatrice.domain.usecases.GetBooksUseCaseImpl
 import kotlinx.coroutines.Dispatchers
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -18,7 +19,7 @@ val viewModelModules = module {
 }
 
 val domainModules = module {
-  factory { GetBooksUseCaseImpl(get()) }
+  factory<GetBooksUseCase> { GetBooksUseCaseImpl(get()) }
 }
 
 val dataRemoteModules = module {
