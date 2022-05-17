@@ -3,12 +3,8 @@ package com.beatrice.bookhubapp.viewModels
 import com.beatrice.bookhubapp.util.ExceptionGetBooksUseCase
 import com.beatrice.bookhubapp.util.FakeGetBooksUseCase
 import com.beatrice.bookhubapp.viewmodels.BookViewModel
-import com.beatrice.domain.usecases.GetBooksUseCaseImpl
-import io.mockk.coEvery
-import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import org.hamcrest.CoreMatchers.`is`
@@ -45,7 +41,7 @@ class BookViewModelTest {
     // Act
     bookViewModel.getBooks(searchTerm)
     // Assert
-    val error = bookViewModel.errorMsg.first()
+    val error = bookViewModel.errorMessage
     assertThat(error, `is`("Something went wrong! Try again later"))
   }
 }
