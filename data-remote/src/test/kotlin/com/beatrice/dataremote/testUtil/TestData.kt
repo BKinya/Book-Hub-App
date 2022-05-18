@@ -43,12 +43,12 @@ val tBookResult = BooksResult(
 )
 
 val tBook = Book(
-  title = "ABC",
-  pageCount = 200,
-  publisher = "ihg",
-  publishingDate = "123",
-  authors = listOf("def", "ghi"),
-  description = "mno",
-  averageRating = 4.5F,
-  imageLink = "xyz"
+  title = "Legacy",
+  pageCount = 400,
+  publisher = "St. Martin's Press",
+  publishingDate = "2021-05-25",
+  authors = listOf( "Nora Roberts"),
+  description = "#1 bestselling author Nora Roberts presents a new novel of a mother and daughter, of romance and ambition, and a traumatic past reawakened in Legacy.",
+  averageRating = 3.5F,
+  imageLink = "http://books.google.com/books/content?id=BXK_zQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
 )

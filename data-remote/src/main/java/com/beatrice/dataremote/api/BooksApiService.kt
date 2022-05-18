@@ -13,5 +13,5 @@ interface BooksApiService {
     @Query("q") searchTerm: String,
     @Query("fields") items: String = "items(volumeInfo)",
     @Query("orderby") orderBy: String = "relevance"
-  ): BooksResult
+  ): Response<BooksResult>
 }

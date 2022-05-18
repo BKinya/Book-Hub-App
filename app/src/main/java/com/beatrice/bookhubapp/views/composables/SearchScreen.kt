@@ -81,7 +81,6 @@ fun collectBooks(
   }
   val books by bookFlowLifeCycleAware.collectAsState(initial = emptyList())
   if (books.isNotEmpty()) {
-    BookList(books = books)
     updateLoading()
   }
 

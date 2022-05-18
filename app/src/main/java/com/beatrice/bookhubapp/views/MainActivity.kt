@@ -11,6 +11,7 @@ import com.beatrice.bookhubapp.viewmodels.BookViewModel
 import com.beatrice.bookhubapp.views.composables.SearchScreen
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+
 class MainActivity : AppCompatActivity() {
   private val bookViewModel: BookViewModel by viewModel()
   override fun onCreate(savedInstanceState: Bundle?) {

@@ -25,6 +25,6 @@ class BookHubApplication : Application() {
       )
     }
 
-    AndroidLogcatLogger.installOnDebuggableApp(this)
+    AndroidLogcatLogger.installOnDebuggableApp(this@BookHubApplication)
   }
 }

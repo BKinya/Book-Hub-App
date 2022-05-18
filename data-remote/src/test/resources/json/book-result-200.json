@@ -1,0 +1,461 @@
+{
+  "items": [
+    {
+      "volumeInfo": {
+        "title": "Legacy",
+        "subtitle": "A Novel",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publisher": "St. Martin's Press",
+        "publishedDate": "2021-05-25",
+        "description": "#1 bestselling author Nora Roberts presents a new novel of a mother and daughter, of romance and ambition, and a traumatic past reawakened in Legacy.",
+
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1250272939"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781250272935"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 400,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 3.5,
+        "ratingsCount": 11,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=BXK_zQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=BXK_zQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=BXK_zQEACAAJ&dq=Nora+Roberts&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=BXK_zQEACAAJ&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Legacy.html?hl=&id=BXK_zQEACAAJ"
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Remember when",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publishedDate": "2004",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0425195473"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780425195475"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 498,
+        "printType": "BOOK",
+        "categories": [
+          "Dallas, Eve (Fictitious character)"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=3juSzQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=3juSzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=3juSzQEACAAJ&dq=Nora+Roberts&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=3juSzQEACAAJ&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Remember_when.html?hl=&id=3juSzQEACAAJ"
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Hideaway",
+        "subtitle": "A Novel",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publisher": "St. Martin's Paperbacks",
+        "publishedDate": "2022-03-29",
+        "description": "\"Reading Hideaway is like a mini vacation, as Roberts transports you from the sun-drenched mountains of Big Sur to the rolling hills of Ireland to the bustling streets of New York City.\" - Associated Press A family ranch in Big Sur country and a legacy of Hollywood royalty set the stage for Nora Roberts’ emotional new suspense novel, Hideaway. Caitlyn Sullivan had come from a long line of Hollywood royalty, stretching back to her Irish immigrant great-grandfather. At nine, she was already a star—yet still an innocent child who loved to play hide and seek with her cousins at the family home in Big Sur. It was during one of those games that she disappeared. Some may have considered her a pampered princess, but Cate was in fact a smart, scrappy fighter, and she managed to escape her abductors. Dillon Cooper was shocked to find the bloodied, exhausted girl huddled in his house—but when the teenager and his family heard her story they provided refuge, reuniting her with her loved ones. Cate’s ordeal, though, was far from over. First came the discovery of a shocking betrayal that would send someone she’d trusted to prison. Then there were years spent away in western Ireland, peaceful and protected but with restlessness growing in her soul. Finally, she would return to Los Angeles, gathering the courage to act again and get past the trauma that had derailed her life. What she didn’t yet know was that two seeds had been planted that long-ago night—one of a great love, and one of a terrible vengeance...",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781250831705"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1250831709"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 544,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 7,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=jgsqEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=jgsqEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=jgsqEAAAQBAJ&dq=Nora+Roberts&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=jgsqEAAAQBAJ&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Hideaway.html?hl=&id=jgsqEAAAQBAJ"
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "The Hollow",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publishedDate": "2008",
+        "description": "As the madness, which happens for seven days every seven years, prepares to descend upon the town of Hawkins Hollow, three men bound by blood and three woman bound by ancestry to a demon join forces to stop the terror from beginning again.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0739495879"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780739495872"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 325,
+        "printType": "BOOK",
+        "categories": [
+          "American fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 9,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=-b_5uwdTrCUC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=-b_5uwdTrCUC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=-b_5uwdTrCUC&q=Nora+Roberts&dq=Nora+Roberts&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=-b_5uwdTrCUC&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Hollow.html?hl=&id=-b_5uwdTrCUC"
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Sea Swept",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publisher": "Penguin",
+        "publishedDate": "1998-01-01",
+        "description": "Cameron, a champion boat racer, returns home to the Maryland shore at the behest of his dying father to care for Seth, a troubled young boy",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0515121843"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780515121841"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 342,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 17,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "2.1.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=JK0MzdAwM9cC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=JK0MzdAwM9cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=JK0MzdAwM9cC&printsec=frontcover&dq=Nora+Roberts&hl=&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=JK0MzdAwM9cC&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Sea_Swept.html?hl=&id=JK0MzdAwM9cC"
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "The Welcoming",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publisher": "Severn House Publishers",
+        "publishedDate": "2019-03",
+        "description": "Visitors come to Charity's friendly little inn to escape their ordinary lives. But FBI Agent Roman DeWinter knows something ugly is going on beneath the cozy surface. Going undercover, Roman's mission is to expose the dangerous criminal gang operating out of the inn - which puts both him and Charity in terrible danger...",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0727888803"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780727888808"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 224,
+        "printType": "BOOK",
+        "categories": [
+          "Hotelkeepers"
+        ],
+        "averageRating": 2.5,
+        "ratingsCount": 3,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=0wjtvgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=0wjtvgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=0wjtvgEACAAJ&dq=Nora+Roberts&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=0wjtvgEACAAJ&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Welcoming.html?hl=&id=0wjtvgEACAAJ"
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Daring to Dream",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publisher": "Penguin",
+        "publishedDate": "1996",
+        "description": "Margo Sullivan had everything she could ask for. The daughter of the Templetons' stern housekeeper, she was treated like a member of the family. But money could not buy the thing she craved most-her mother's acceptance...",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0515119202"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780515119206"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 384,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 7,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "2.1.3.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=pmth-Mn_N-gC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=pmth-Mn_N-gC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=pmth-Mn_N-gC&dq=Nora+Roberts&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=pmth-Mn_N-gC&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Daring_to_Dream.html?hl=&id=pmth-Mn_N-gC"
+      }
+    },
+    {
+      "volumeInfo": {
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780515150643"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0515150649"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.0.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=DP5hDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=DP5hDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=DP5hDwAAQBAJ&dq=Nora+Roberts&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=DP5hDwAAQBAJ&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/_.html?hl=&id=DP5hDwAAQBAJ"
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Hidden Riches",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publisher": "Putnam Publishing Group",
+        "publishedDate": "1994",
+        "description": "After purchasing an odd assortment of auction items, a Philadelphia antiques dealer becomes the deadly focus of a sinister international smuggler, and she and her handsome upstairs tenant, an ex-cop, set out to uncover the truth",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0399139486"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780399139482"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 395,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 3.5,
+        "ratingsCount": 5,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.2.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=9ZG1vWUYkrQC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=9ZG1vWUYkrQC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=9ZG1vWUYkrQC&q=Nora+Roberts&dq=Nora+Roberts&hl=&cd=9&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=9ZG1vWUYkrQC&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Hidden_Riches.html?hl=&id=9ZG1vWUYkrQC"
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Black Hills",
+        "authors": [
+          "Nora Roberts"
+        ],
+        "publisher": "Penguin",
+        "publishedDate": "2010",
+        "description": "Childhood sweethearts Cooper Sullivan and Lil Chance are reunited when Coop leaves New York to assist his aging grandparents on their South Dakota ranch, but Coop must come to Lil's aid when the unsolved killing of a hiker is linked to vandalism at Lil'swildlife refuge.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780515148046"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0515148040"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 464,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 3,
+        "ratingsCount": 34,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.0.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=N4RKDAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=N4RKDAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=N4RKDAAAQBAJ&dq=Nora+Roberts&hl=&cd=10&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=N4RKDAAAQBAJ&dq=Nora+Roberts&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Black_Hills.html?hl=&id=N4RKDAAAQBAJ"
+      }
+    }
+  ]
+}

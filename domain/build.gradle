@@ -10,6 +10,8 @@ java {
 
 dependencies {
 
-//  api project(path: ':core')
+
   implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+  implementation project(path: ':core')
+
 }
