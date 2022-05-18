@@ -8,23 +8,23 @@ val tBookResult = BooksResult(
     Item(
       VolumeInfo(
         allowAnonLogging = false,
-        title = "ABC",
-        authors = listOf("def", "ghi"),
-        averageRating = 4.5F,
+        title = "Legacy",
+        authors = listOf("Nora Roberts"),
+        averageRating = 3.5F,
         canonicalVolumeLink = "jkl",
-        description = "mno",
+        description = "#1 bestselling author Nora Roberts presents a new novel of a mother and daughter, of romance and ambition, and a traumatic past reawakened in Legacy.",
         categories = listOf("pqr", "stu"),
         contentVersion = "3.6",
         imageLinks = ImageLinks(
-          thumbnail = "xyz",
-          smallThumbnail = "xyz"
+          thumbnail = "http://books.google.com/books/content?id=BXK_zQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+          smallThumbnail = "http://books.google.com/books/content?id=BXK_zQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
         ),
         language = "cba",
         industryIdentifiers = emptyList(),
         infoLink = "fed",
-        publisher = "ihg",
+        publisher = "St. Martin's Press",
         maturityRating = "zyx",
-        pageCount = 200,
+        pageCount = 400,
         previewLink = "lkj",
         printType = "yuv",
         panelizationSummary = PanelizationSummary(
@@ -35,7 +35,7 @@ val tBookResult = BooksResult(
           image = false,
           text = true
         ),
-        publishedDate = "123",
+        publishedDate = "2021-05-25",
         ratingsCount = 5
       )
     )

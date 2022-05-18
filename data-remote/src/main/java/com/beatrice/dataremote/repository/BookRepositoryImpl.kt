@@ -10,23 +10,23 @@ import kotlinx.coroutines.flow.flow
 import java.io.IOException
 
 
-class BookRepositoryImpl (
+class BookRepositoryImpl(
   private val booksApiService: BooksApiService
-    ): BookRepository {
-  override suspend fun getBooks(searchTerm: String)= flow {
+) : BookRepository {
+  override suspend fun getBooks(searchTerm: String) = flow {
     val result: NetworkResult<List<Book>> = try {
       val response = booksApiService.getBooks(searchTerm)
-      if (response.isSuccessful){
+      if (response.isSuccessful) {
         val books = response.body()?.toDomain()
         NetworkResult.Success(data = books)
-      }else{
-        val error = response.errorBody().toString()
+      } else {
+        val error = response.message()
         NetworkResult.ApiError(error)
       }
-    }catch (e: IOException){
-      NetworkResult.NoInternet
-    }catch (e: Exception){
-      NetworkResult.ServerError
+    } catch (e: IOException) {
+      NetworkResult.NetworkError(e.message!!)
+    } catch (e: Exception) {
+      NetworkResult.ServerError(e.message!!)
     }
     emit(result)
   }

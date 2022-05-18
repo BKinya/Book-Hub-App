@@ -4,7 +4,6 @@ import com.beatrice.core.util.NetworkResult
 import com.beatrice.dataremote.api.BooksApiService
 import com.beatrice.dataremote.testUtil.getJson
 import com.beatrice.dataremote.testUtil.tBook
-import io.mockk.coVerify
 import junit.framework.TestCase.assertNotNull
 import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.runBlocking
@@ -12,6 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
+import okhttp3.mockwebserver.SocketPolicy
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.Is.`is`
 import org.junit.After
@@ -72,7 +72,40 @@ class BookRepositoryTest {
       assertNotNull(data)
       assertThat(data?.get(0), `is`(tBook))
     }
-
   }
 
+  @Test
+  fun `should return API error when request fails`() = runBlocking{
+   // Arrange
+    mockWebServer.enqueue(MockResponse().apply {
+      setResponseCode(400)
+      setBody("Bad request")
+    })
+   // Act
+    val searchTerm = "Nora Roberts"
+    val result = repository.getBooks(searchTerm)
+   // Assert
+    result.collect{ res ->
+      assertTrue(res is NetworkResult.ApiError)
+      val message = (res as NetworkResult.ApiError).error
+      assertNotNull(message)
+    }
+  }
+
+  @Test
+  fun `should return Network error when IO fails fails`() = runBlocking{
+   // Arrange
+    mockWebServer.enqueue(MockResponse().apply {
+      setSocketPolicy(SocketPolicy.DISCONNECT_AFTER_REQUEST)
+    })
+   // Act
+    val searchTerm = "Nora Roberts"
+    val result = repository.getBooks(searchTerm)
+   // Assert
+    result.collect{ res ->
+      assertTrue(res is NetworkResult.NetworkError)
+      val message = (res as NetworkResult.NetworkError).error
+      assertNotNull(message)
+    }
+  }
 }

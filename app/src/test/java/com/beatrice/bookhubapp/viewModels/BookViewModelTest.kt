@@ -18,30 +18,30 @@ class BookViewModelTest {
 
   private val searchTerm = "Paulo Coelho"
 
-  @Test
-  fun shouldUpdateBookItemsStateFlowInstance() = runBlocking {
-    // Arrange
-    val getBooksUseCase = FakeGetBooksUseCase()
-    val bookViewModel = BookViewModel(getBooksUseCase, testDispatcher)
-    // Act
-    bookViewModel.getBooks(searchTerm)
-    // Assert
-    val book = bookViewModel.books.first()
-    assertThat(book.size, `is`(1))
-    assertThat(book[0].title, `is`("ABC"))
-    assertThat(book[0].averageRating, `is`(4.5F))
-    assertThat(book[0].pageCount, `is`(200))
-  }
+//  @Test
+//  fun shouldUpdateBookItemsStateFlowInstance() = runBlocking {
+//    // Arrange
+//    val getBooksUseCase = FakeGetBooksUseCase()
+//    val bookViewModel = BookViewModel(getBooksUseCase, testDispatcher)
+//    // Act
+//    bookViewModel.getBooks(searchTerm)
+//    // Assert
+//    val book = bookViewModel.books.first()
+//    assertThat(book.size, `is`(1))
+//    assertThat(book[0].title, `is`("ABC"))
+//    assertThat(book[0].averageRating, `is`(4.5F))
+//    assertThat(book[0].pageCount, `is`(200))
+//  }
 
-  @Test
-  fun shouldUpdateErrorStateFlowInstance() = runBlocking {
-    // Arrange
-    val getBooksUseCase = ExceptionGetBooksUseCase()
-    val bookViewModel = BookViewModel(getBooksUseCase, testDispatcher)
-    // Act
-    bookViewModel.getBooks(searchTerm)
-    // Assert
-    val error = bookViewModel.errorMessage
-    assertThat(error, `is`("Something went wrong! Try again later"))
-  }
+//  @Test
+//  fun shouldUpdateErrorStateFlowInstance() = runBlocking {
+//    // Arrange
+//    val getBooksUseCase = ExceptionGetBooksUseCase()
+//    val bookViewModel = BookViewModel(getBooksUseCase, testDispatcher)
+//    // Act
+//    bookViewModel.getBooks(searchTerm)
+//    // Assert
+//    val error = bookViewModel.errorMessage
+//    assertThat(error, `is`("Something went wrong! Try again later"))
+//  }
 }
