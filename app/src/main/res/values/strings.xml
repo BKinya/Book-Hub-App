@@ -4,4 +4,9 @@
   <string name="enter_search_term_label">Enter Author\'s Name or a Book Title.</string>
   <string name="search_icon">Search Icon</string>
   <string name="book_thumbnail">Book Thumbnail</string>
+  <!-- Error Messages -->
+  <string name="no_internet_message">Please connect to the Internet and try again.</string>
+  <string name="general_api_error_message">Something went wrong!. Please try again.</string>
+  <string name="sever_error_message">Service unavailable. Please try again later.</string>
+  <!-- End of Error Messages -->
 </resources>

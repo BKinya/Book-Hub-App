@@ -80,9 +80,9 @@ fun collectBooks(
     booksFlow.flowWithLifecycle(lifecycleOwner.lifecycle, Lifecycle.State.STARTED)
   }
   val books by bookFlowLifeCycleAware.collectAsState(initial = emptyList())
-  if (books.isNotEmpty()) {
-    updateLoading()
-  }
+//  if (books.isNotEmpty()) {
+//    updateLoading()
+//  }
 
 
 }
@@ -92,15 +92,15 @@ fun collectError(
   lifecycleOwner: LifecycleOwner,
   bookViewModel: BookViewModel = viewModel()
 ) {
-  val errorFlow = bookViewModel.errorMessage
-  val errorFlowLifeCycleAware = remember(errorFlow, lifecycleOwner) {
-    logcat("SearchScreen") { "update the value of loading errors" }
-    errorFlow.flowWithLifecycle(lifecycleOwner.lifecycle, Lifecycle.State.STARTED)
-  }
-  val errorMessage by errorFlowLifeCycleAware.collectAsState(initial = null)
-
-  if (errorMessage != null) {
-    // Show error view
-    logcat("SearchScreen") { "An error $errorMessage" }
-  }
+//  val errorFlow = bookViewModel.errorMessage
+//  val errorFlowLifeCycleAware = remember(errorFlow, lifecycleOwner) {
+//    logcat("SearchScreen") { "update the value of loading errors" }
+//    errorFlow.flowWithLifecycle(lifecycleOwner.lifecycle, Lifecycle.State.STARTED)
+//  }
+//  val errorMessage by errorFlowLifeCycleAware.collectAsState(initial = null)
+//
+//  if (errorMessage != null) {
+//    // Show error view
+//    logcat("SearchScreen") { "An error $errorMessage" }
+//  }
 }
