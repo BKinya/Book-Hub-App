@@ -39,10 +39,6 @@ fun SearchScreen(
     )
 
     SearchComposable(
-      searchTerm,
-      onValueChanged = { newValue ->
-        searchTerm = newValue
-      },
       onButtonClicked = {
         bookViewModel.getBooks(searchTerm)
       })
