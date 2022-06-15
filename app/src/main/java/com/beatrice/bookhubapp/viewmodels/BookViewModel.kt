@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.beatrice.bookhubapp.util.ErrorMessages.GENERAL_API_ERROR_MESSAGE
 import com.beatrice.bookhubapp.util.ErrorMessages.NO_INTERNET_ERROR_MESSAGE
 import com.beatrice.bookhubapp.util.ErrorMessages.SERVICE_UNAVAILABLE_ERROR_MESSAGE
+import com.beatrice.bookhubapp.util.UiState
 import com.beatrice.core.util.NetworkResult
 import com.beatrice.domain.models.Book
 import com.beatrice.domain.usecases.GetBooksUseCase
@@ -21,48 +22,37 @@ class BookViewModel(
   private val dispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
-  private val bookItems = MutableStateFlow<List<Book>?>(emptyList())
-  val books: StateFlow<List<Book>?>
-    get() = bookItems
-
-  private val generalError = MutableStateFlow<String?>(null)
-  val generalErrorMessage: StateFlow<String?>
-    get() = generalError
-
-  private val serverError = MutableStateFlow<String?>(null)
-  val serverErrorMessage: StateFlow<String?>
-    get() = serverError
-
-  private val internetError = MutableStateFlow<String?>(null)
-  val internetErrorMessage: StateFlow<String?>
-    get() = internetError
+  private val booksResult = MutableStateFlow<UiState<List<Book>>?>(null)
+  val booksUiState: StateFlow<UiState<List<Book>>?>
+    get() = booksResult
 
 
   fun getBooks(searchTerm: String) {
     viewModelScope.launch(dispatcher) {
+      booksResult.value = UiState.Loading()
       getBooksUseCase.getBooks(searchTerm)
         .catch { e ->
           logcat("BookViewModel - getBooks()") { "Exception ${e.message}" }
-          generalError.value = GENERAL_API_ERROR_MESSAGE
+          booksResult.value = UiState.Error(message = GENERAL_API_ERROR_MESSAGE)
         }
         .collect { result ->
           when (result) {
             is NetworkResult.Success -> {
               val books = result.data
               logcat("BookViewModel - getBooks()") { "Books => ${books?.size}" }
-              bookItems.value = books
+              booksResult.value = UiState.Success(data = books)
             }
             is NetworkResult.NetworkError -> {
               logcat("BookViewModel - getBooks()") { "Exception ${result.error}" }
-              internetError.value = NO_INTERNET_ERROR_MESSAGE
+              booksResult.value = UiState.Error(message = NO_INTERNET_ERROR_MESSAGE)
             }
             is NetworkResult.ApiError -> {
               logcat("BookViewModel - getBooks()") { "Exception ${result.error}" }
-              generalError.value = GENERAL_API_ERROR_MESSAGE
+              booksResult.value = UiState.Error(message = GENERAL_API_ERROR_MESSAGE)
             }
             is NetworkResult.ServerError -> {
               logcat("BookViewModel - getBooks()") { "Exception ${result.error}" }
-              serverError.value = SERVICE_UNAVAILABLE_ERROR_MESSAGE
+              booksResult.value = UiState.Error(message = SERVICE_UNAVAILABLE_ERROR_MESSAGE)
             }
           }
         }

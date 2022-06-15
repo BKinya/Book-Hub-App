@@ -1,13 +1,12 @@
 package com.beatrice.bookhubapp.viewModels
 
-import com.beatrice.bookhubapp.util.ApiExceptionGetBooksUseCase
+import com.beatrice.bookhubapp.util.*
 import com.beatrice.bookhubapp.util.ErrorMessages.GENERAL_API_ERROR_MESSAGE
 import com.beatrice.bookhubapp.util.ErrorMessages.NO_INTERNET_ERROR_MESSAGE
 import com.beatrice.bookhubapp.util.ErrorMessages.SERVICE_UNAVAILABLE_ERROR_MESSAGE
-import com.beatrice.bookhubapp.util.FakeGetBooksUseCase
-import com.beatrice.bookhubapp.util.NetworkExceptionGetBooksUseCase
-import com.beatrice.bookhubapp.util.ServerExceptionGetBooksUseCase
 import com.beatrice.bookhubapp.viewmodels.BookViewModel
+import com.beatrice.domain.models.Book
+import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -30,11 +29,13 @@ class BookViewModelTest {
     // Act
     bookViewModel.getBooks(searchTerm)
     // Assert
-    val book = bookViewModel.books.first()!!
-    assertThat(book.size, `is`(1))
-    assertThat(book[0].title, `is`("ABC"))
-    assertThat(book[0].averageRating, `is`(4.5F))
-    assertThat(book[0].pageCount, `is`(200))
+    val result = bookViewModel.booksUiState.first()!!
+    assertTrue(result is UiState.Success)
+    val books = (result as UiState.Success).data!!
+    assertThat(books.size, `is`(1))
+    assertThat(books[0].title, `is`("ABC"))
+    assertThat(books[0].averageRating, `is`(4.5F))
+    assertThat(books[0].pageCount, `is`(200))
   }
 
   @Test
@@ -45,7 +46,9 @@ class BookViewModelTest {
     // Act
     bookViewModel.getBooks(searchTerm)
     // Assert
-    val error = bookViewModel.internetErrorMessage.first()
+    val result = bookViewModel.booksUiState.first()!!
+    assertTrue(result is UiState.Error)
+    val error = (result as UiState.Error).message
     assertThat(error, `is`(NO_INTERNET_ERROR_MESSAGE))
   }
 
@@ -57,7 +60,9 @@ class BookViewModelTest {
    // Act
     bookViewModel.getBooks(searchTerm)
    // Assert
-    val error = bookViewModel.serverErrorMessage.first()
+    val result = bookViewModel.booksUiState.first()!!
+    assertTrue(result is UiState.Error)
+    val error = (result as UiState.Error).message
     assertThat(error, `is`(SERVICE_UNAVAILABLE_ERROR_MESSAGE))
   }
 
@@ -69,7 +74,9 @@ class BookViewModelTest {
    // Act
     bookViewModel.getBooks(searchTerm)
    // Assert
-    val error = bookViewModel.generalErrorMessage.first()
+    val result = bookViewModel.booksUiState.first()!!
+    assertTrue(result is UiState.Error)
+    val error = (result as UiState.Error).message
     assertThat(error, `is`(GENERAL_API_ERROR_MESSAGE))
   }
 }

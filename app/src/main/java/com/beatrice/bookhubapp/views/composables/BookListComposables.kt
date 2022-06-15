@@ -26,8 +26,7 @@ import com.beatrice.domain.models.Book
 import logcat.logcat
 
 @Composable
-fun BookList(books: List<Book>) {
-  logcat("ProgressComposable") { "Composing books" }
+fun BookListComposable(books: List<Book>) {
   LazyColumn(
     verticalArrangement = Arrangement.spacedBy(8.dp)
   ) {
@@ -40,7 +39,6 @@ fun BookList(books: List<Book>) {
 // TODO: Alternating colors in a row
 @Composable
 fun BookRow(book: Book) {
-  logcat("ProgressComposable") { "Composing books actually " }
   Card(
     modifier = Modifier.fillMaxWidth(),
     shape = RoundedCornerShape(16.dp),
@@ -107,7 +105,7 @@ fun DefaultPreview1() {
     Surface(
       color = MaterialTheme.colors.background
     ) {
-      BookList(
+      BookListComposable(
         books = testBooks,
       )
     }
