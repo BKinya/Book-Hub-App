@@ -17,7 +17,7 @@ fun BooksResult.toDomain(): List<Book> {
       description = bookInfo.description,
       imageLink = bookInfo.imageLinks?.thumbnail?: "",
       pageCount = bookInfo.pageCount,
-      publisher = bookInfo.publisher,
+      publisher = bookInfo.publisher ?:"",
       publishingDate = bookInfo.publishedDate ?: ""
     )
   }

@@ -1,8 +1,9 @@
 package com.beatrice.bookhubapp.views.composables
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -29,22 +30,25 @@ import logcat.logcat
 
 @Composable
 fun BookListComposable(books: List<Book>) {
-  LazyColumn(
-    verticalArrangement = Arrangement.spacedBy(12.dp)
+  LazyVerticalGrid(
+    columns = GridCells.Adaptive(minSize = 250.dp),
+    verticalArrangement = Arrangement.spacedBy(12.dp),
+    horizontalArrangement = Arrangement.spacedBy(12.dp)
   ) {
-    items(books) { book ->
-      BookRow(book = book)
+    itemsIndexed(books){index, item ->
+      BookRow(book = item, index)
     }
   }
 }
 
-// TODO: Alternating colors in a row
 @Composable
-fun BookRow(book: Book) {
+fun BookRow(book: Book, index: Int) {
+  val isOddIndex = index % 2 != 0
   Card(
     modifier = Modifier.fillMaxWidth(),
     shape = RoundedCornerShape(16.dp),
-    elevation = 4.dp
+    elevation = 2.dp,
+    backgroundColor = if (isOddIndex) Color.LightGray else Color.White
   ) {
     Row(
       modifier = Modifier
@@ -87,7 +91,7 @@ fun BookRow(book: Book) {
           fontSize = 16.sp,
         )
         Text(
-          text = "${book.publisher}, ${book.publishingDate.getYear()}",
+          text = "${book.publishingDate.getYear()} | ${book.publisher} ",
           color = Color.Gray,
           fontFamily = FontFamily.SansSerif,
           fontSize = 16.sp,

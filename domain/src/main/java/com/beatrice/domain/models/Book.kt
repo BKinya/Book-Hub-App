@@ -7,6 +7,6 @@ data class Book(
   val averageRating: Float,
   val imageLink: String,
   val publishingDate: String,
-  val publisher: String?,
+  val publisher: String,
   val description: String?,
   )
