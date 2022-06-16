@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -16,13 +17,16 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.beatrice.bookhubapp.R
 import com.beatrice.bookhubapp.viewmodels.BookViewModel
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun SearchScreen(
   bookViewModel: BookViewModel = viewModel(),
 ) {
   val inputState = rememberSearchInputState(initialText = "")
   val lifecycleOwner = LocalLifecycleOwner.current
+  val keyboardController = LocalSoftwareKeyboardController.current
   Column(
     modifier = Modifier
       .fillMaxWidth()
@@ -40,6 +44,7 @@ fun SearchScreen(
     SearchInputComposable(
       inputSate = inputState,
       onButtonClicked = {
+        keyboardController?.hide()
         bookViewModel.getBooks(inputState.searchTerm)
       })
 

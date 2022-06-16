@@ -11,7 +11,7 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -28,6 +28,7 @@ fun SearchInputComposable(
   onClearInput:()-> Unit = { inputSate.searchTerm = ""},
   onButtonClicked: () -> Unit
 ) {
+
   Row(
     modifier = Modifier.padding(
       top = 8.dp,
@@ -45,6 +46,7 @@ fun SearchInputComposable(
         )
       }
     }
+
     OutlinedTextField(
       value = inputSate.searchTerm,
       onValueChange = onValueChanged,
