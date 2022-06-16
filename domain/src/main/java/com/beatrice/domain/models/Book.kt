@@ -2,7 +2,7 @@ package com.beatrice.domain.models
 
 data class Book(
   val title: String,
-  val authors: List<String>,
+  val authors: String,
   val pageCount: Int,
   val averageRating: Float,
   val imageLink: String,

@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -22,13 +23,14 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.beatrice.bookhubapp.R
+import com.beatrice.bookhubapp.util.getYear
 import com.beatrice.domain.models.Book
 import logcat.logcat
 
 @Composable
 fun BookListComposable(books: List<Book>) {
   LazyColumn(
-    verticalArrangement = Arrangement.spacedBy(8.dp)
+    verticalArrangement = Arrangement.spacedBy(12.dp)
   ) {
     items(books) { book ->
       BookRow(book = book)
@@ -61,7 +63,6 @@ fun BookRow(book: Book) {
         placeholder = painterResource(id = R.drawable.ic_launcher_foreground),
         onLoading = {
           logcat("BooksComposable") { "Image loading" }
-//          CircularProgressIndicator()
         },
         onError = {
           logcat("BooksComposable") { "Image error ${it.result.request} \n ${it.result.throwable}" }
@@ -71,32 +72,36 @@ fun BookRow(book: Book) {
         },
       )
       Spacer(modifier = Modifier.size(16.dp))
-      Column() {
+      Column(
+        verticalArrangement = Arrangement.spacedBy(4.dp)
+      ) {
         Text(
           text = book.title,
           fontFamily = FontFamily.Serif,
-          fontSize = 18.sp,
-          fontWeight = FontWeight.SemiBold
+          fontWeight = FontWeight.SemiBold,
+          fontSize = 16.sp
         )
         Text(
-          text = book.authors.toString(),
+          text = book.authors,
           fontFamily = FontFamily.SansSerif,
-          fontSize = 15.sp,
+          fontSize = 16.sp,
         )
         Text(
-          text = "${book.publisher}, ${book.publishingDate}",
+          text = "${book.publisher}, ${book.publishingDate.getYear()}",
+          color = Color.Gray,
           fontFamily = FontFamily.SansSerif,
-          fontSize = 15.sp,
+          fontSize = 16.sp,
         )
         Text(
-          text = book.pageCount.toString(),
+          text = "${book.pageCount} pages",
           fontFamily = FontFamily.SansSerif,
-          fontSize = 15.sp,
+          fontSize = 16.sp,
         )
       }
     }
   }
 }
+//  TODO: Ratings bar. How to: https://www.youtube.com/watch?v=SmqiTrpEX-A&ab_channel=MakeitEasy
 
 @Preview
 @Composable
@@ -124,7 +129,7 @@ val tBook = Book(
   pageCount = 200,
   publisher = "HarperOne",
   publishingDate = "2018-01-30",
-  authors = listOf("Paulo Coelho"),
+  authors = "Paulo Coelho",
   description = "mno",
   averageRating = 4.5F,
   imageLink = "http://books.google.com/books/content?id=PU2kw-x8p2EC&printsec=frontcover&img=1&zoom=1&source=gbs_api"

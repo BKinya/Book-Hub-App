@@ -6,9 +6,13 @@ import com.beatrice.domain.models.Book
 fun BooksResult.toDomain(): List<Book> {
   return this.items.map {
     val bookInfo = it.volumeInfo
+    var bookTitle = bookInfo.title
+    bookInfo.subtitle?.let { subTitle ->
+      bookTitle = "${bookInfo.title}: $subTitle"
+    }
     Book(
-      title = bookInfo.title ?: "",
-      authors = bookInfo.authors ?: emptyList(), // TODO: Check all the nulls
+      title = bookTitle ?: "",
+      authors = bookInfo.authors?.joinToString() ?: "",
       averageRating = bookInfo.averageRating,
       description = bookInfo.description,
       imageLink = bookInfo.imageLinks?.thumbnail?: "",
