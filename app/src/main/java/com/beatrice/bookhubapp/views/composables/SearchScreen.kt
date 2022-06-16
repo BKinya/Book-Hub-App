@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -22,7 +21,7 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 fun SearchScreen(
   bookViewModel: BookViewModel = viewModel(),
 ) {
-  var searchTerm by rememberSaveable { mutableStateOf("") }
+  val inputState = rememberSearchInputState(initialText = "")
   val lifecycleOwner = LocalLifecycleOwner.current
   Column(
     modifier = Modifier
@@ -38,9 +37,10 @@ fun SearchScreen(
       fontFamily = FontFamily.Serif
     )
 
-    SearchComposable(
+    SearchInputComposable(
+      inputSate = inputState,
       onButtonClicked = {
-        bookViewModel.getBooks(searchTerm)
+        bookViewModel.getBooks(inputState.searchTerm)
       })
 
     BooksStateComposable(lifecycleOwner = lifecycleOwner)

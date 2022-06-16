@@ -21,7 +21,7 @@ class BookRepositoryImpl(
         NetworkResult.Success(data = books)
       } else {
         val error = response.message()
-        NetworkResult.ApiError(error)
+        NetworkResult.ApiError(response.toString())
       }
     } catch (e: IOException) {
       NetworkResult.NetworkError(e.message!!)

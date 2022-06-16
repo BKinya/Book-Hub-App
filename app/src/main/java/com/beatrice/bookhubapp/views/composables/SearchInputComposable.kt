@@ -19,43 +19,40 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.beatrice.bookhubapp.R
-import logcat.logcat
+import com.beatrice.bookhubapp.util.SearchInputState
 
 @Composable
-fun SearchComposable(
-  searchTerm: MutableState<String> = rememberSaveable { mutableStateOf("")},
-  onValueChanged: (String) -> Unit = { newString -> searchTerm.value =  newString},
-  onClear: () -> Unit = { searchTerm.value = ""},
+fun SearchInputComposable(
+  inputSate: SearchInputState = rememberSearchInputState(initialText = ""),
+  onValueChanged: (String) -> Unit = { newString -> inputSate.searchTerm = newString },
+  onClearInput:()-> Unit = { inputSate.searchTerm = ""},
   onButtonClicked: () -> Unit
 ) {
-
-  val clearButton = @Composable {
-    IconButton(
-      onClick = onClear,
-    ) {
-      Icon(
-        Icons.Default.Clear,
-        contentDescription = "Clear button",
-        tint = Color.Black
-      )
+  Row(
+    modifier = Modifier.padding(
+      top = 8.dp,
+      bottom = 16.dp
+    )
+  ) {
+    val clearButton = @Composable {
+      IconButton(
+        onClick = onClearInput,
+      ) {
+        Icon(
+          Icons.Default.Clear,
+          contentDescription = "Clear button",
+          tint = Color.Gray
+        )
+      }
     }
-  }
-  val showClearButton by remember {
-    derivedStateOf {
-      logcat("SearchLogs"){"Checking.."}
-      searchTerm.value.isNotBlank() || searchTerm.value.isNotEmpty() }
-  }
-  Row(modifier = Modifier.padding(
-    top = 8.dp,
-    bottom = 16.dp
-  )) {
     OutlinedTextField(
-      value = searchTerm.value,
+      value = inputSate.searchTerm,
       onValueChange = onValueChanged,
       modifier = Modifier.padding(end = 8.dp),
       shape = RoundedCornerShape(16.dp),
-      trailingIcon = if(showClearButton) clearButton else null
+      trailingIcon = if (inputSate.showClearButton) clearButton else null
     )
+
     Button(
       onClick = onButtonClicked,
       modifier = Modifier.size(width = 64.dp, height = 50.dp),
@@ -68,3 +65,9 @@ fun SearchComposable(
     }
   }
 }
+
+@Composable
+fun rememberSearchInputState(initialText: String): SearchInputState =
+  rememberSaveable(initialText, saver = SearchInputState.Saver) {
+    SearchInputState(initialText)
+  }
