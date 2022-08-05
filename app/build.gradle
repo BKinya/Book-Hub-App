@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-  compileSdk 31
+  compileSdk 32
 
   defaultConfig {
     applicationId "com.beatrice.bookhubapp"
     minSdk 23
-    targetSdk 31
+    targetSdk 32
     versionCode 1
     versionName "1.0"
 
@@ -60,7 +60,9 @@ dependencies {
   implementation'com.squareup.logcat:logcat:0.1'
 
   // Koin
-  implementation "io.insert-koin:koin-android:3.2.0"
+  def koin_version = "3.2.0"
+  implementation "io.insert-koin:koin-android:$koin_version"
+  implementation "io.insert-koin:koin-androidx-compose:$koin_version"
   
   // Jetpack compose
   implementation 'androidx.activity:activity-compose:1.4.0'
@@ -86,11 +88,10 @@ dependencies {
   testImplementation "io.mockk:mockk:1.12.3"
   def coroutinesVersion = '1.6.1'
   testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
-//  androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+
   // Jetpack Compose UI Tests
-  androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.1'
-
-
-
-
+  def compose_version = "1.2.0"
+  androidTestImplementation("androidx.compose.ui:ui-test-junit4:$compose_version")
+  debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+  debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
 }

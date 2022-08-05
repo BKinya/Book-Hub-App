@@ -8,7 +8,7 @@ import androidx.compose.runtime.saveable.listSaver
 class SearchInputState(initialText: String) {
   var searchTerm by mutableStateOf(initialText)
 
-  val showClearButton: Boolean
+  val isValidInput: Boolean
   get() = searchTerm.isNotEmpty() || searchTerm.isNotBlank()
 
   companion object {
