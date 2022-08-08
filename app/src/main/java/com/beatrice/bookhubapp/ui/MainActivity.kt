@@ -1,4 +1,4 @@
-package com.beatrice.bookhubapp.views
+package com.beatrice.bookhubapp.ui
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -10,6 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.beatrice.bookhubapp.ui.composables.SearchScreen
 
 
+// TODO 11: Try Robot pattern for the next UI tests
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

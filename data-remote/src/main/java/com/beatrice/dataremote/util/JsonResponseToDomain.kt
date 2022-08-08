@@ -14,7 +14,7 @@ fun BooksResult.toDomain(): List<Book> {
       title = bookTitle ?: "",
       authors = bookInfo.authors?.joinToString() ?: "",
       averageRating = bookInfo.averageRating,
-      description = bookInfo.description,
+      description = bookInfo.description ?: " ",
       imageLink = bookInfo.imageLinks?.thumbnail?: "",
       pageCount = bookInfo.pageCount,
       publisher = bookInfo.publisher ?:"",

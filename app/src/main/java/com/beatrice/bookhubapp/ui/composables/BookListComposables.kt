@@ -1,4 +1,4 @@
-package com.beatrice.bookhubapp.views.composables
+package com.beatrice.bookhubapp.ui.composables
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -29,9 +30,13 @@ import com.beatrice.bookhubapp.util.getYear
 import com.beatrice.domain.models.Book
 import logcat.logcat
 
+const val BOOKS_LIST_TAG = "BooksColumn"
+
 @Composable
-fun BookListComposable(books: List<Book>) {
-  LazyVerticalGrid(
+fun BookListComposable(books: List<Book>, modifier: Modifier = Modifier) {
+  LazyVerticalGrid(// Todo: I did this for a grid layout in large screens. Maybe I'll change
+                  // if when I start optimizing for large screens
+    modifier = modifier.testTag(BOOKS_LIST_TAG),
     columns = GridCells.Adaptive(minSize = 250.dp),
     verticalArrangement = Arrangement.spacedBy(12.dp),
     horizontalArrangement = Arrangement.spacedBy(12.dp)
@@ -78,29 +83,29 @@ fun BookRow(book: Book, index: Int) {
       )
       Spacer(modifier = Modifier.size(16.dp))
       Column(
-        verticalArrangement = Arrangement.spacedBy(4.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp)
       ) {
         Text(
           text = book.title,
           fontFamily = FontFamily.Serif,
           fontWeight = FontWeight.SemiBold,
-          fontSize = 16.sp
+          fontSize = 18.sp
         )
         Text(
-          text = book.authors,
+          text = "${book.authors}, ${book.publishingDate.getYear()}",
           fontFamily = FontFamily.SansSerif,
-          fontSize = 16.sp,
+          fontWeight = FontWeight.Medium,// TODO: Try spannable text
+          fontSize = 17.sp,
         )
         Text(
-          text = "${book.publishingDate.getYear()} | ${book.publisher} ",
-          color = Color.Gray,
+          text = "${ book.description.take(27)}...",// TODO: Fix this when you start working on the actions
           fontFamily = FontFamily.SansSerif,
-          fontSize = 16.sp,
+          fontSize = 17.sp,
         )
         Text(
           text = "${book.pageCount} pages",
           fontFamily = FontFamily.SansSerif,
-          fontSize = 16.sp,
+          fontSize = 17.sp,
         )
       }
     }

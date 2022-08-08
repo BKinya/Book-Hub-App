@@ -8,5 +8,5 @@ data class Book(
   val imageLink: String,
   val publishingDate: String,
   val publisher: String,
-  val description: String?,
+  val description: String,
   )

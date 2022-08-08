@@ -7,6 +7,7 @@ import com.beatrice.bookhubapp.ui.composables.*
 import com.beatrice.bookhubapp.util.ErrorMessages
 import com.beatrice.bookhubapp.util.ErrorMessages.GENERAL_API_ERROR_MESSAGE
 import com.beatrice.bookhubapp.util.UiState
+import com.beatrice.domain.models.Book
 import org.junit.Rule
 import org.junit.Test
 
@@ -71,6 +72,42 @@ class SearchScreenTest {
      */
     @Test
     fun testFour(){
+        val uiState = UiState.Success(
+            data = listOf(
+                Book(
+                    title = "Paulo Coelho: A Warrior's Life",
+                    pageCount = 200,
+                    publisher = "HarperOne",
+                    publishingDate = "2018-01-30",
+                    authors = "Paulo Coelho",
+                    description = "mno",
+                    averageRating = 4.5F,
+                    imageLink = "http://books.google.com/books/content?id=PU2kw-x8p2EC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                ),
+                Book(
+                    title = "I know why the caged bird sings",
+                    pageCount = 300,
+                    publisher = "HarperOne1",
+                    publishingDate = "2018-01-23",
+                    authors = "Maya Angelou",
+                    description = "asdfasdfasdf",
+                    averageRating = 4.8F,
+                    imageLink = "http://books.google.com/books/content?id=PU2kw-x8p2EC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                )
+            )
+        )
+
+        composeTestRule.setContent {
+            BooksStateComposable(booksUiState = uiState)
+        }
+
+        composeTestRule.onRoot().printToLog("BooksList")
+        composeTestRule.onNode(hasScrollAction() and hasTestTag(BOOKS_LIST_TAG)).assertIsDisplayed()
+        val titleOne = uiState.data?.get(0)?.title
+        val titleTwo = uiState.data?.get(1)?.title
+        composeTestRule.onNodeWithText(titleOne!!).assertIsDisplayed()
+        composeTestRule.onNodeWithText(titleTwo!!).assertIsDisplayed()
+
 
     }
 }
