@@ -36,7 +36,12 @@ fun SearchScreen() {
   val bookFlowLifeCycleAware = remember(booksFlow, lifecycleOwner) {
     booksFlow.flowWithLifecycle(lifecycleOwner.lifecycle, Lifecycle.State.STARTED)
   }
-  val booksUiState by bookFlowLifeCycleAware.collectAsState(UiState.Loading())// TODO: Check collectAsStateWithLifeCycle API
+  val booksUiState by bookFlowLifeCycleAware.collectAsState(UiState.Loading())
+  /**
+   *   TODO: Check collectAsStateWithLifeCycle API
+   *   https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.0-alpha01
+   * Lifecycle 2.6.0-alpha01
+   */
   Column(
     modifier = Modifier
       .fillMaxWidth()
